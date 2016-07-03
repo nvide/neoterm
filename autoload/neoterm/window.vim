@@ -40,11 +40,7 @@ function! s:term_creator(handlers)
 endfunction
 
 function! neoterm#window#reopen(buffer_id)
-  if g:neoterm_position == "horizontal"
-    exec "botright ".g:neoterm_size."split +buffer".a:buffer_id
-  else
-    exec "botright ".g:neoterm_size."vsplit +buffer".a:buffer_id
-  end
-
+  call s:new_split()
+  exec "buffer ".a:buffer_id
   wincmd p
 endfunction
