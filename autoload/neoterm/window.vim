@@ -6,7 +6,7 @@ function! neoterm#window#create(handlers, source)
   if a:source == 'tnew' && !g:neoterm_split_on_tnew
     call s:term_creator(a:handlers)
   else
-    call s:new_split()
+    call s:new_window()
     call s:term_creator(a:handlers)
   end
 
@@ -21,16 +21,8 @@ function! neoterm#window#create(handlers, source)
   end
 endfunction
 
-function! s:new_split()
-  let current_window = winnr()
-
-  if g:neoterm_position == "horizontal"
-    exec "botright".g:neoterm_size." new "
-  else
-    exec "botright vert".g:neoterm_size." new "
-  end
-
-  return current_window
+function! s:new_window()
+  execute get(g:, 'neoterm_window', 'bottomright new')
 endfunction
 
 function! s:term_creator(handlers)
@@ -40,7 +32,7 @@ function! s:term_creator(handlers)
 endfunction
 
 function! neoterm#window#reopen(buffer_id)
-  call s:new_split()
+  call s:new_window()
   exec "buffer ".a:buffer_id
   wincmd p
 endfunction

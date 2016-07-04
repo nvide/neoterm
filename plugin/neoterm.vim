@@ -31,10 +31,6 @@ if !exists("g:neoterm_shell")
   let g:neoterm_shell = &sh
 end
 
-if !exists("g:neoterm_size")
-  let g:neoterm_size = ""
-end
-
 if !exists("g:neoterm_test_libs")
   let g:neoterm_test_libs = []
 end

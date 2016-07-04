@@ -153,11 +153,10 @@ Executes the last test command ran. The last test command is recorde on
 ===============================================================================
 4. Options                      *neoterm-vars* *neoterm-variables* *neoterm-options*
 
-                                                                *g:neoterm_size*
+                                                              *g:neoterm_window*
 
-Set the neoterm terminal split size. The default, empty string, will use half
-of the current window.
-Default value: `''`.
+Command to open neoterm window
+Default value: `bottomroght new`.
 
 
                                                             *g:neoterm_position*
