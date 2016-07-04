@@ -22,7 +22,7 @@ function! neoterm#window#create(handlers, source)
 endfunction
 
 function! s:new_window()
-  execute get(g:, 'neoterm_window', 'bottomright new')
+  execute get(g:, 'neoterm_window', 'botright new')
 endfunction
 
 function! s:term_creator(handlers)
